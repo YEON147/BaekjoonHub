@@ -5,7 +5,4 @@ for _ in range(N):
   a, b = map(int, input().split())
   ans += a*b
 
-if ans == total:
-  print('Yes')
-else:
-  print("No")
+print("Yes" if ans==total else "No")
