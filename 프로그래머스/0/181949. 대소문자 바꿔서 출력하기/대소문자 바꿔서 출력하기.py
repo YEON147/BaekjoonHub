@@ -1,9 +1,1 @@
-str = input()
-ans = ''
-for i in str:
-    if i == i.upper():
-        ans += i.lower()
-    else:
-        ans += i.upper()
-        
-print(ans)
+print(''.join(s.upper() if s == s.lower() else s.lower() for s in input()))
