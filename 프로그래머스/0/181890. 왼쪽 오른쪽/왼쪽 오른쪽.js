@@ -1,10 +1,7 @@
 function solution(str_list) {
-    var answer = [];
-    const [l, r] = ["l", "r"].map(x => {
-    const index = str_list.indexOf(x);
-    return index === -1 ? 100 : index;
-    });
-    return l < r 
-        ? str_list.slice(0, l)
-        : str_list.slice(r+1);
+    for (i=0; i <= str_list.length-1; i++){
+        if (str_list[i] === "l") return str_list.slice(0, i);
+        if (str_list[i] === "r") return str_list.slice(i+1);
+    }
+    return [];
 }
