@@ -1,10 +1,10 @@
 # [level 0] 글자 지우기 - 181900 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181900) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181900?language=javascript) 
 
 ### 성능 요약
 
-메모리: 11.4 MB, 시간: 0.01 ms
+메모리: 43.9 MB, 시간: 0.10 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 08월 03일 23:54:54
+2026년 08월 30일 23:09:06
 
 ### 문제 설명
 
