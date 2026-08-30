@@ -1,10 +1,10 @@
 # [level 0] 9로 나눈 나머지 - 181914 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181914?language=javascript) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181914) 
 
 ### 성능 요약
 
-메모리: 50 MB, 시간: 2.35 ms
+메모리: 51.1 MB, 시간: 5.01 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 08월 20일 16:27:15
+2026년 08월 30일 22:44:58
 
 ### 문제 설명
 
