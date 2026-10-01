@@ -1,17 +1,21 @@
 def solution(message, spoiler_ranges):
-    masked = [False] * len(message)
+    answer = []
+    new = list(message)
+
+    # 바꾸기 전 단어
+    sentence = message.split(' ')         
+
+    # 마스킹
     for s, e in spoiler_ranges:
         for x in range(s, e + 1):
-            masked[x] = True
+            if new[x] != ' ':
+                new[x] = '*'
 
-    spoiled, normal = set(), set()
-    i = 0
-    for word in message.split(' '):
-        j = i + len(word)
-        if any(masked[i:j]):
-            spoiled.add(word)
-        else:
-            normal.add(word)
-        i = j + 1  # 공백 한 칸 건너뜀
+    words = ''.join(new).split(' ')
 
-    return len(spoiled - normal)
+    for i in range(len(sentence)):
+        if '*' in words[i]:          
+            words[i] = sentence[i]
+            if words.count(words[i]) < 2: 
+                answer.append(sentence[i])
+    return len(answer)                     
