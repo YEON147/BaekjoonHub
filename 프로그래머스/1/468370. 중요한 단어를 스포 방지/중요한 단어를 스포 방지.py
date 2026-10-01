@@ -1,9 +1,9 @@
 def solution(message, spoiler_ranges):
-    answer = []
+    answer = 0
     new = list(message)
 
     # 바꾸기 전 단어
-    sentence = message.split(' ')         
+    sentence = list(message.split(' '))
 
     # 마스킹
     for s, e in spoiler_ranges:
@@ -14,8 +14,9 @@ def solution(message, spoiler_ranges):
     words = ''.join(new).split(' ')
 
     for i in range(len(sentence)):
-        if '*' in words[i]:          
+        if words[i].count('*'):
             words[i] = sentence[i]
-            if words.count(words[i]) < 2: 
-                answer.append(sentence[i])
-    return len(answer)                     
+            if words.count(words[i]) < 2:
+                print(sentence[i])
+                answer += 1
+    return answer
