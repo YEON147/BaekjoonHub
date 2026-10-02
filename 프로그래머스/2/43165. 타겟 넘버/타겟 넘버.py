@@ -2,7 +2,7 @@ def solution(numbers, target):
     answer = 0
     def dfs(idx, total):
         nonlocal answer
-        if idx == len(numbers):
+        if idx == len(numbers) :
             if total == target:
                 answer += 1
             return 
