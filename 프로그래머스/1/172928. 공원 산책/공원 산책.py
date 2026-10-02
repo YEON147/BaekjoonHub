@@ -6,12 +6,13 @@ def solution(park, routes):
     x, y = 0, 0
     for i in range(h):
         if 'S' in park[i]:
-            x, y = i, park[i].index('S')
+            x, y = i, park[i].index('S') 
             break
     for route in routes:
-        d, n = route.split()
-        n = int(n)
+        d, n = route[0], int(route[2])
         nx, ny = x, y
+        
+        # n칸 내에 벽 있는지 and 범위 밖인지
         for _ in range(n):
             nx += EWSN[d][0]
             ny += EWSN[d][1]
