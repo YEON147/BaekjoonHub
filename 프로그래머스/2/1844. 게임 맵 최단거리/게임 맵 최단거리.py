@@ -1,24 +1,27 @@
 from collections import deque
 def solution(maps):
-    r, c = len(maps), len(maps[0])
-    dist = [[0]*c for _ in range(r)]
-    
-    queue = deque([(0,0)])
+    # 최단거리 | 출발: (0,0) 도착: (4,4)
+    N, M = len(maps), len(maps[0])
+    answer = 0
+    dist = [[0]*M for _ in range(N)]
+    D = [[0,1], [1,0], [0,-1], [-1,0]]  #우하좌상
+
+    q = deque([(0,0)])
     dist[0][0] = 1
-    
-    while queue:
-        x, y = queue.popleft()
-        for dx, dy in [(0, 1), (1, 0), (0, -1), (-1, 0)]: # 우하좌상
+    while q:
+        x, y = q.popleft()
+        
+        for dx, dy in D:
             nx, ny = x+dx, y+dy
-            
-            if nx < 0 or nx >= r or ny < 0 or ny >= c: # 맵밖일때
-                continue 
-            if maps[nx][ny] == 0:   # 벽일때
+            # 맵 범위 밖일때
+            if nx < 0 or nx >= N or ny < 0 or ny >= M:
                 continue
-            if dist[nx][ny] != 0:   # 이미 방문 했을 때
+            # 벽이거나 방문한 곳일때
+            if maps[nx][ny] == 0 or dist[nx][ny]:
                 continue
-            
-            queue.append((nx, ny))
+            # 이전거리 + 1
             dist[nx][ny] = dist[x][y] + 1
-    ans = dist[r-1][c-1]   
-    return  ans if ans else -1
+            q.append((nx,ny))
+            if [nx, ny] == [N-1, M-1]:
+                return dist[nx][ny]
+    return -1
