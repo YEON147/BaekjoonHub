@@ -5,6 +5,5 @@ def solution(brown, yellow):
         if MN%i == 0:
             m, n = i, MN//i
             if m+n == MplusN:
-                answer = [n,m]
-                break
-    return answer
+                return [n,m]
+                
