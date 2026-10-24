@@ -11,12 +11,12 @@ def solution(plans):
 
     for i in range(len(plans) - 1):
         name, start, dur = plans[i]
-        gap = plans[i + 1][1] - start   # 다음 과제 시작까지 남은 있는 시간
+        gap = plans[i + 1][1] - start   # 다음 과제 시작까지 쓸 수 있는 시간
 
         if dur <= gap:
             answer.append(name)
             gap -= dur
-            # 남는 시간으로 최근에 멈춘 과제부터 처리
+
             while stack and gap > 0:
                 n, rem = stack.pop()
                 if rem <= gap:
