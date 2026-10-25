@@ -1,10 +1,8 @@
 function solution(cards1, cards2, goal) {
-    var answer = '';
-    cards1.reverse()
-    cards2.reverse()
+    let [i, j] = [0, 0];
     for (const ch of goal){
-        if (ch === cards1.at(-1)) cards1.pop()
-        else if (ch === cards2.at(-1)) cards2.pop()
+        if (cards1[i] === ch) i++;
+        else if (cards2[j] === ch) j++;
         else return "No"
     }
     return "Yes";
