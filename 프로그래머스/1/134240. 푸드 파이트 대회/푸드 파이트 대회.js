@@ -1,9 +1,8 @@
 function solution(food) {
-    let ans = [];
-    food.slice(1).forEach((v, i) => {
-        cnt = Math.floor(v/2);
-        console.log(i+1, v, cnt)
-        ans += String(i+1).repeat(cnt);
-    })
-    return ans+'0'+ans.split('').reverse().join('');
+    let res = '';
+    for (let i = 1; i < food.length; i++) {
+        res += String(i).repeat(Math.floor(food[i]/2));
+    }
+
+    return res + '0' + [...res].reverse().join('');
 }
